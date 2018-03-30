@@ -20,12 +20,15 @@ class Pokemon
   def self.find (id, db)
     # The find method creates a new Pokemon after selecting their row from the database by their id number.
     
-    poke_name = db.execute("SELECT name FROM pokemon WHERE id = ?", id).flatten[0]
-    poke_type = db.execute("SELECT type FROM pokemon WHERE id = ?", id).flatten[0]
-    poke_hp = db.execute("SELECT hp FROM pokemon WHERE id = ?", id).flatten[0]
+    # poke_name = db.execute("SELECT name FROM pokemon WHERE id = ?", id).flatten[0]
+    # poke_type = db.execute("SELECT type FROM pokemon WHERE id = ?", id).flatten[0]
+    # poke_hp = db.execute("SELECT hp FROM pokemon WHERE id = ?", id).flatten[0]
     
-    self.new(id: id, name: poke_name, type: poke_type, db: db, hp: poke_hp)
-      
+    # self.new(id: id, name: poke_name, type: poke_type, db: db, hp: poke_hp)
+    pokemon_info = db.execute("SELECT * FROM pokemon WHERE id=?", id_num).flatten
+    
+    
+    
   end
   
   def alter_hp (hp, db)
