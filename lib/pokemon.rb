@@ -24,8 +24,8 @@ class Pokemon
     poke_type = db.execute("SELECT type FROM pokemon WHERE id = ?", id).flatten[0]
     poke_hp = db.execute("SELECT hp FROM pokemon WHERE id = ?", id).flatten[0]
     
-    poke = self.new(id: id, name: poke_name, type: poke_type, db: db, hp: poke_hp)
-    poke   
+    self.new(id: id, name: poke_name, type: poke_type, db: db, hp: poke_hp)
+      
   end
   
   def alter_hp (hp, db)
