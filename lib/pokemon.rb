@@ -22,9 +22,9 @@ class Pokemon
     
     poke_name = db.execute("SELECT name FROM pokemon WHERE id = ?", id).flatten[0]
     poke_type = db.execute("SELECT type FROM pokemon WHERE id = ?", id).flatten[0]
-    #poke_hp = db.execute("SELECT hp FROM pokemon WHERE id = ?", id).flatten[0]
+    poke_hp = db.execute("SELECT hp FROM pokemon WHERE id = ?", id).flatten[0]
     
-    poke = self.new(id: id, name: poke_name, type: poke_type, db: db)
+    poke = self.new(id: id, name: poke_name, type: poke_type, db: db, hp: poke_hp)
     poke   
   end
   
