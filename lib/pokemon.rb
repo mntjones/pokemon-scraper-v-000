@@ -9,7 +9,7 @@ class Pokemon
     @name = pokemon[:name]
     @type = pokemon[:type]
     @db = pokemon[:db]
-    @hp = pokemon[:hp]
+    @hp = pokemon[:hp] || nil
     
   end
   
