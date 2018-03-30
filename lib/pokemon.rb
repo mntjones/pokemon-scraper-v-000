@@ -28,4 +28,8 @@ class Pokemon
     poke   
   end
   
+  def self.alter_hp (hp, db)
+    
+  end
+  
 end
